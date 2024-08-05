@@ -4,7 +4,7 @@ import click
 import logging
 
 
-from flac_cleaner.formats import AudioTags, Mp3, Flac 
+from flac_cleaner.formats import AudioTags, Mp3, Flac
 
 LOG = logging.getLogger(__name__)
 
