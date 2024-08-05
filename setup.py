@@ -1,12 +1,5 @@
-import re
 from setuptools import setup
-
-
-version = re.search(
-    r'^__version__\s*=\s*"(.*)"',
-    open('flac_cleaner/__init__.py').read(),
-    re.M
-).group(1)
+from flac_cleaner import __version__
 
 with open("README.md", "rb") as f:
     long_descr = f.read().decode("utf-8")
@@ -21,7 +14,7 @@ setup(
     entry_points={
         "console_scripts": ['flac-cleaner = flac_cleaner.cli:main']
     },
-    version=version,
+    version=__version__,
     description="Flac audio file cleanser.",
     long_description=long_descr,
     author="Will Hall",

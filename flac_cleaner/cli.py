@@ -5,6 +5,7 @@ import logging
 
 
 from flac_cleaner.formats import AudioTags, Mp3, Flac
+from flac_cleaner import __version__
 
 LOG = logging.getLogger(__name__)
 
@@ -52,6 +53,7 @@ def discover_audio(path):
 
 @click.group(context_settings=CONTEXT_SETTINGS)
 @click.option('-n', '--dry-run', is_flag=True, help="Dry run")
+@click.version_option(version=__version__, message=f'v{__version__}')
 @click.option('--padding', default=2, show_default=True, help="Track padding")
 @click.pass_context
 def main(ctx, dry_run, padding) -> None:
